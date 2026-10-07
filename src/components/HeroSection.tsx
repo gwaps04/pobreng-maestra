@@ -128,12 +128,12 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
               <div className="flex items-center gap-4 pb-4 border-b border-slate-100">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shadow-md border-2 border-[#E81C76] flex-shrink-0 bg-yellow-100">
                   <ImagePlaceholder
-                    src="/images/avatar.png"
-                    fallbackSrc="/images/avatar.svg"
+                    src="/images/rofile.jpg"
+                    fallbackSrc="/images/profile.jpg"
                     alt="Cecille Escullar - Pobreng Maestra"
                     containerClassName="w-full h-full"
                     label="Maestra Avatar"
-                    targetUploadPath="public/images/avatar.png"
+                    targetUploadPath="public/images/profile.jpg"
                   />
                 </div>
                 <div>

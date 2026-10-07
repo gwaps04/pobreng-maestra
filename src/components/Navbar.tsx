@@ -53,12 +53,12 @@ export function Navbar({ activeSection, onNavigate }: NavbarProps) {
           >
             <div className="w-12 h-12 sm:w-14 sm:h-14 relative flex-shrink-0">
               <ImagePlaceholder
-                src="/images/logo.png"
-                fallbackSrc="/images/logo.svg"
+                src="/images/navbar-logo.png"
+                fallbackSrc="/images/navbar-logo.png"
                 alt="Pobreng Maestra Logo"
                 containerClassName="w-full h-full object-contain"
                 label="Pobreng Maestra Logo"
-                targetUploadPath="public/images/logo.png"
+                targetUploadPath="public/images/navbar-logo.png"
               />
             </div>
             <div className="flex flex-col">
