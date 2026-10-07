@@ -25,19 +25,19 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
         <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-300">
           <div className="w-full aspect-[16/6] min-h-[220px] sm:min-h-[300px] lg:min-h-[360px] relative">
             <ImagePlaceholder
-              src="/images/hero-banner.svg"
-              fallbackSrc="/images/hero-banner.svg"
+              src="/images/hero-banner.jpg"
+              fallbackSrc="/images/hero-banner.jpg"
               alt="Pobreng Maestra Official Banner"
               containerClassName="w-full h-full"
               label="Pobreng Maestra Hero Banner"
-              targetUploadPath="public/images/hero-banner.svg"
+              targetUploadPath="public/images/hero-banner.jpg"
             />
           </div>
 
           {/* Quick Upload Hint Tag */}
           <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-slate-700 shadow-sm border border-slate-200/80 hidden sm:flex items-center gap-1.5">
             <Camera className="w-3 h-3 text-[#E81C76]" />
-            <span>Banner location: <code className="text-[#14532D]">public/images/hero-banner.svg</code></span>
+            <span>Banner location: <code className="text-[#14532D]">public/images/hero-banner.jpg</code></span>
           </div>
         </div>
 
