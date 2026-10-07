@@ -10,7 +10,6 @@ import {
   Clock, 
   Share2, 
   ArrowUpRight, 
-  ShieldCheck, 
   Building2, 
   Utensils,
   Zap,
@@ -109,52 +108,70 @@ export function BrandPartnerships({ onInquire }: BrandPartnershipsProps) {
 
   const featuredVlogs = [
     {
-      title: "Authentic Spicy Bicol Express & Fresh Seafood Feast",
-      views: "3.4M Views",
-      comments: "18.2K Comments",
-      category: "Food Culture",
-      imageKey: "thumb-bicol-express.jpg",
-      location: "Gubat, Sorsogon",
+      title: "Hanapin niyo lang po ang Tay Ellis Motor Shop sa Brgy. Tugos, Sorsogon City",
+      subtitle: "#ShihfaPhilippines #ShihFaTakesYouFarther",
+      link: "https://www.facebook.com/reel/27895514250126248",
+      category: "Shihfa Philippines",
+      location: "Brgy. Tugos, Sorsogon City",
+      imageKey: "thumb-tay-ellis-shihfa.jpg",
+      fallbackKey: "thumb-tay-ellis-shihfa.svg",
+      tagColor: "bg-blue-900 text-blue-100",
+      sponsor: "Shihfa Tires & Motor Shop",
     },
     {
-      title: "Hidden Eco-Resort Villa Tour with Natural Spring Pool",
-      views: "2.8M Views",
-      comments: "12.5K Comments",
-      category: "Travel & Hospitality",
-      imageKey: "thumb-sorsogon-tour.jpg",
-      location: "Irosin, Sorsogon",
+      title: "Greenwood Philippines",
+      subtitle: "Eco-tourism, sustainable provincial farm & nature showcase",
+      link: "https://www.facebook.com/reel/1031379939941023",
+      category: "Greenwood Philippines",
+      location: "Bicol Region",
+      imageKey: "thumb-greenwood-ph.jpg",
+      fallbackKey: "thumb-greenwood-ph.svg",
+      tagColor: "bg-emerald-900 text-emerald-100",
+      sponsor: "Greenwood Eco-Living",
     },
     {
-      title: "Buhay Niyogan: Pagcopra at Tradisyunal na Paggawa ng Langis",
-      views: "4.1M Views",
-      comments: "24.1K Comments",
-      category: "Provincial Life",
-      imageKey: "thumb-pagcopra.jpg",
-      location: "Bulan, Sorsogon",
+      title: "Nakakatuwa magharvest ng PILI kapag hitik sa bunga",
+      subtitle: "#buhayprobinsya #ShihfaPhilippines",
+      link: "https://www.facebook.com/reel/1032944149763499",
+      category: "Buhay Probinsya & Agri",
+      location: "Sorsogon, Bicol",
+      imageKey: "thumb-pili-harvest.jpg",
+      fallbackKey: "thumb-pili-harvest.svg",
+      tagColor: "bg-amber-900 text-amber-100",
+      sponsor: "Shihfa x Buhay Probinsya",
     },
     {
-      title: "Ginataang Alimango at Pako mula sa Bakawan",
-      views: "2.5M Views",
-      comments: "14.3K Comments",
-      category: "Culinary Vlog",
-      imageKey: "thumb-ginataan.jpg",
-      location: "Matnog, Sorsogon",
+      title: "Ginataang Buko sa Gulay",
+      subtitle: "Authentic, mouthwatering heritage cooking straight from the province",
+      link: "https://www.facebook.com/reel/1547647023832685",
+      category: "Bicol Culinary Heritage",
+      location: "Sorsogon Home Kitchen",
+      imageKey: "thumb-ginataang-buko.jpg",
+      fallbackKey: "thumb-ginataang-buko.svg",
+      tagColor: "bg-[#14532D] text-[#FEDE2B]",
+      sponsor: "Traditional Bicol Cuisine",
     },
     {
-      title: "Majestic Mayon Volcano View Family Villa Staycation",
-      views: "3.1M Views",
-      comments: "15.9K Comments",
-      category: "Resort Feature",
-      imageKey: "thumb-mayon-resort.jpg",
-      location: "Legazpi, Albay",
+      title: "Highly recommended namin ito sainyo❤️ For all events and occasions.",
+      subtitle: "#cateringservice #grazingtable",
+      link: "https://www.facebook.com/reel/1442670117712223",
+      category: "Catering & Grazing Table",
+      location: "Bicol Events & Celebrations",
+      imageKey: "thumb-catering-grazing.jpg",
+      fallbackKey: "thumb-catering-grazing.svg",
+      tagColor: "bg-pink-900 text-pink-100",
+      sponsor: "Events & Catering Partner",
     },
     {
-      title: "Night Market Street Food Crawl: Kinalas & Tilmok",
-      views: "2.9M Views",
-      comments: "13.8K Comments",
-      category: "Local Delicacies",
-      imageKey: "thumb-streetfood.jpg",
-      location: "Naga City, CamSur",
+      title: "Nobody’s tough like Mama!🩷 Live Demo cooking at LCC Naga Felix Plazo",
+      subtitle: "Live cooking demo with Tough Mama home and kitchen appliances! #ToughMama #toughmamamoments",
+      link: "https://www.facebook.com/reel/2497713320710155",
+      category: "Tough Mama Appliances",
+      location: "LCC Naga Felix Plazo, CamSur",
+      imageKey: "thumb-tough-mama-lcc.jpg",
+      fallbackKey: "thumb-tough-mama-lcc.svg",
+      tagColor: "bg-[#E81C76] text-white",
+      sponsor: "Tough Mama x LCC Mall",
     },
   ];
 
@@ -287,43 +304,42 @@ export function BrandPartnerships({ onInquire }: BrandPartnershipsProps) {
 
         {/* Featured Video Portfolio & Thumbnails Placeholder Grid */}
         <div className="space-y-6 pt-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-amber-200/60 pb-4">
-            <div>
-              <h3 className="text-2xl font-black text-slate-900">
-                Sample Campaign Portfolio &amp; Viral Features
-              </h3>
-              <p className="text-xs text-slate-500">
-                Representative videos showcasing Maestra's high engagement and organic reach
-              </p>
-            </div>
-            <div className="text-xs font-bold text-[#14532D] bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200">
-              Folder: <code className="text-slate-800">public/images/thumbnails/</code>
-            </div>
+          <div className="border-b border-amber-200/60 pb-4">
+            <h3 className="text-2xl font-black text-slate-900">
+              Sample Campaign Portfolio &amp; Viral Features
+            </h3>
+            <p className="text-xs text-slate-500 mt-1">
+              Representative videos showcasing Maestra's high engagement and organic reach
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredVlogs.map((vlog, idx) => (
-              <div
+              <a
                 key={idx}
-                className="group rounded-3xl overflow-hidden bg-[#FAF7F2] border border-amber-200/80 shadow-md hover:shadow-xl transition-all duration-200 hover:-translate-y-1 flex flex-col justify-between"
+                href={vlog.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Watch "${vlog.title}" on Facebook Reel`}
+                className="group rounded-3xl overflow-hidden bg-[#FAF7F2] border border-amber-200/80 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between cursor-pointer"
               >
                 {/* Thumbnail Container with Placeholder */}
                 <div className="relative aspect-video w-full bg-slate-900 overflow-hidden">
                   <ImagePlaceholder
                     src={`/images/thumbnails/${vlog.imageKey}`}
-                    fallbackSrc="/images/hero-banner.svg"
+                    fallbackSrc={`/images/thumbnails/${vlog.fallbackKey}`}
                     alt={vlog.title}
                     containerClassName="w-full h-full"
                     label={vlog.title}
                     targetUploadPath={`public/images/thumbnails/${vlog.imageKey}`}
                   />
                   {/* Category Pill */}
-                  <div className="absolute top-3 left-3 bg-[#14532D]/90 backdrop-blur-sm text-[#FEDE2B] text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+                  <div className="absolute top-3 left-3 bg-[#14532D]/95 backdrop-blur-sm text-[#FEDE2B] text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-xs">
                     {vlog.category}
                   </div>
                   {/* Play Overlay */}
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center pointer-events-none">
-                    <div className="w-12 h-12 rounded-full bg-[#E81C76] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute inset-0 bg-black/25 group-hover:bg-black/45 transition-colors flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-[#E81C76] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
                       <Play className="w-5 h-5 fill-white ml-0.5" />
                     </div>
                   </div>
@@ -332,37 +348,37 @@ export function BrandPartnerships({ onInquire }: BrandPartnershipsProps) {
                 {/* Card Meta */}
                 <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
                   <div className="space-y-1.5">
-                    <span className="text-[11px] font-bold text-slate-400">
-                      📍 {vlog.location}
-                    </span>
-                    <h4 className="font-bold text-sm text-slate-900 group-hover:text-[#14532D] transition-colors leading-snug">
+                    <div className="flex items-center justify-between text-[11px] font-bold text-slate-400">
+                      <span>📍 {vlog.location}</span>
+                      <span className="text-[#E81C76] font-semibold flex items-center gap-0.5">
+                        <span>Reel</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </span>
+                    </div>
+
+                    <h4 className="font-bold text-sm text-slate-900 group-hover:text-[#E81C76] transition-colors leading-snug line-clamp-2">
                       {vlog.title}
                     </h4>
+
+                    {vlog.subtitle && (
+                      <p className="text-xs text-slate-500 font-medium leading-relaxed line-clamp-2">
+                        {vlog.subtitle}
+                      </p>
+                    )}
                   </div>
 
                   <div className="pt-3 border-t border-amber-200/60 flex items-center justify-between text-xs">
-                    <span className="font-extrabold text-[#14532D]">{vlog.views}</span>
-                    <span className="text-slate-500 font-medium">{vlog.comments}</span>
+                    <span className="font-extrabold text-[#14532D] text-[11px]">
+                      {vlog.sponsor}
+                    </span>
+                    <span className="inline-flex items-center gap-1 font-extrabold text-[#E81C76] group-hover:underline">
+                      <span>Watch Reel</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
-          </div>
-        </div>
-
-        {/* Why Brands Love Working With Maestra Guarantee Banner */}
-        <div className="rounded-3xl bg-[#14532D] text-white p-8 sm:p-10 shadow-xl relative overflow-hidden">
-          <div className="max-w-3xl space-y-4 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800 text-[#FEDE2B] text-xs font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Professional Brand Commitment</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              No Dramas. Fast Turnaround. Authentic Filipino Reach.
-            </h3>
-            <p className="text-emerald-100 text-xs sm:text-sm leading-relaxed">
-              We respect your marketing timelines. Content drafts are submitted for brand review prior to posting, and post-campaign analytical reports are provided upon request.
-            </p>
           </div>
         </div>
       </div>

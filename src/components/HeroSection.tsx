@@ -9,8 +9,7 @@ import {
   Play, 
   CheckCircle2, 
   Download, 
-  Mail,
-  Camera
+  Mail
 } from "lucide-react";
 
 interface HeroSectionProps {
@@ -32,12 +31,6 @@ export function HeroSection({ onExplore }: HeroSectionProps) {
               label="Pobreng Maestra Hero Banner"
               targetUploadPath="public/images/hero-banner.jpg"
             />
-          </div>
-
-          {/* Quick Upload Hint Tag */}
-          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-slate-700 shadow-sm border border-slate-200/80 hidden sm:flex items-center gap-1.5">
-            <Camera className="w-3 h-3 text-[#E81C76]" />
-            <span>Banner location: <code className="text-[#14532D]">public/images/hero-banner.jpg</code></span>
           </div>
         </div>
 

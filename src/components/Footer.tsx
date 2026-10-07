@@ -20,8 +20,8 @@ export function Footer({ onNavigate }: FooterProps) {
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-white rounded-2xl p-1 shadow-md">
                 <ImagePlaceholder
-                  src="/images/logo.png"
-                  fallbackSrc="/images/logo.svg"
+                  src="/images/navbar-logo.png"
+                  fallbackSrc="/images/navbar-logo.png"
                   alt="Pobreng Maestra Logo"
                   containerClassName="w-full h-full object-contain"
                   label="Logo"
