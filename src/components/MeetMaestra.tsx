@@ -51,12 +51,12 @@ export function MeetMaestra() {
           <div className="lg:col-span-5 space-y-4">
             <div className="relative rounded-3xl overflow-hidden border-4 border-[#FEDE2B] shadow-2xl bg-[#FAF7F2] aspect-[4/5] max-w-md mx-auto">
               <ImagePlaceholder
-                src="/images/avatar.png"
-                fallbackSrc="/images/avatar.svg"
+                src="/images/meet-pobreng-maestra.jpg"
+                fallbackSrc="/images/meet-pobreng-maestra.jpg"
                 alt="Maestra Cecille Escullar Portrait"
                 containerClassName="w-full h-full"
                 label="Maestra Portrait"
-                targetUploadPath="public/images/avatar.png"
+                targetUploadPath="public/images/meet-pobreng-maestra.jpg"
               />
               {/* Floating Badge */}
               <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-lg border border-slate-100 flex items-center justify-between">
