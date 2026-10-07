@@ -1,0 +1,6 @@
+{
+  "name": "Pobreng Maestra",
+  "description": "Official Creator Portfolio, Media Kit & Brand Collaboration Hub for Pobreng Maestra (Cecille Escullar) — Bicol & Philippine Travel and Food Vlogger with 1.4M+ followers.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

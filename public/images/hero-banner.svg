@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="yellowSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFEE58"/>
+      <stop offset="100%" stop-color="#FDD835"/>
+    </linearGradient>
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Bright Sunny Yellow Sky -->
+  <rect width="1920" height="600" fill="url(#yellowSky)"/>
+
+  <!-- Palm Tree Silhouettes (Deep Tropical Green) -->
+  <g fill="#0A5C36" opacity="0.9">
+    <!-- Left grove -->
+    <path d="M 0,600 C 40,480 90,320 120,180 C 122,170 125,170 127,180 C 140,320 150,480 160,600 Z"/>
+    <path d="M 125,175 C 90,130 30,120 -10,130 C -5,145 60,165 125,175 Z"/>
+    <path d="M 125,175 C 100,100 80,60 50,30 C 65,45 105,110 125,175 Z"/>
+    <path d="M 125,175 C 145,100 170,50 210,20 C 195,50 165,115 125,175 Z"/>
+    <path d="M 125,175 C 170,120 230,120 270,140 C 240,155 180,160 125,175 Z"/>
+
+    <!-- Additional palms -->
+    <path d="M 280,600 C 310,450 330,300 345,150 C 347,140 350,140 352,150 C 360,300 370,450 380,600 Z"/>
+    <path d="M 350,145 C 300,110 240,110 200,130 C 230,145 290,150 350,145 Z"/>
+    <path d="M 350,145 C 330,80 320,40 310,10 C 330,35 350,85 350,145 Z"/>
+    <path d="M 350,145 C 375,80 410,40 450,15 C 430,45 390,95 350,145 Z"/>
+    <path d="M 350,145 C 400,105 460,115 500,140 C 470,155 410,155 350,145 Z"/>
+
+    <!-- Center/Right palms -->
+    <path d="M 700,600 C 730,470 750,340 765,210 C 770,340 775,470 780,600 Z"/>
+    <path d="M 1150,600 C 1170,450 1190,300 1205,170 C 1215,300 1225,450 1235,600 Z"/>
+    <path d="M 1205,170 C 1160,120 1100,120 1060,140 C 1100,155 1160,160 1205,170 Z"/>
+    <path d="M 1205,170 C 1245,110 1300,90 1350,95 C 1320,125 1270,150 1205,170 Z"/>
+
+    <!-- Bahay Kubo Stilt Hut Silhouette -->
+    <path d="M 1180,420 L 1240,360 L 1300,420 L 1290,480 L 1190,480 Z"/>
+    <rect x="1200" y="480" width="8" height="120"/>
+    <rect x="1235" y="480" width="8" height="120"/>
+    <rect x="1270" y="480" width="8" height="120"/>
+  </g>
+
+  <!-- Brand Typography Overlay -->
+  <g filter="url(#textGlow)">
+    <text x="540" y="270" text-anchor="middle" font-family="'Fredoka', 'Arial Black', sans-serif" font-weight="900" font-size="160" fill="#FFFFFF" stroke="#000000" stroke-width="26" stroke-linejoin="round">Pobreng</text>
+    <text x="540" y="420" text-anchor="middle" font-family="'Fredoka', 'Arial Black', sans-serif" font-weight="900" font-size="160" fill="#FFFFFF" stroke="#000000" stroke-width="26" stroke-linejoin="round">Maestra</text>
+
+    <text x="540" y="270" text-anchor="middle" font-family="'Fredoka', 'Arial Black', sans-serif" font-weight="900" font-size="160" fill="#E81C76">Pobreng</text>
+    <text x="540" y="420" text-anchor="middle" font-family="'Fredoka', 'Arial Black', sans-serif" font-weight="900" font-size="160" fill="#E81C76">Maestra</text>
+  </g>
+
+  <!-- Social badges capsule bar -->
+  <rect x="160" y="480" width="820" height="70" rx="35" fill="#FFFFFF" opacity="0.95" filter="url(#textGlow)"/>
+  <!-- FB -->
+  <circle cx="210" cy="515" r="22" fill="#E81C76"/>
+  <text x="210" y="522" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF">f</text>
+  <text x="245" y="522" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#1E293B">Pobreng Maestra</text>
+  <!-- YT -->
+  <circle cx="430" cy="515" r="22" fill="#E81C76"/>
+  <polygon points="424,505 440,515 424,525" fill="#FFFFFF"/>
+  <text x="465" y="522" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#1E293B">Pobreng Maestra Official</text>
+  <!-- Email -->
+  <circle cx="700" cy="515" r="22" fill="#E81C76"/>
+  <text x="700" y="522" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="18" fill="#FFFFFF">✉</text>
+  <text x="730" y="522" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#1E293B">escullarcecille3@gmail.com</text>
+
+  <!-- Right side Creator Character Silhouette / Illustration -->
+  <g transform="translate(1420, 40)">
+    <!-- Halo glow -->
+    <circle cx="240" cy="280" r="230" fill="#FFFFFF" opacity="0.3"/>
+    <!-- Head & Shoulders outline -->
+    <circle cx="240" cy="230" r="150" fill="#FFCC80" stroke="#000000" stroke-width="12"/>
+    <!-- Hair -->
+    <path d="M 110,240 C 90,120 180,60 250,60 C 330,60 380,120 370,240 C 340,160 300,140 240,140 C 180,140 140,170 110,240 Z" fill="#422006"/>
+    <!-- Glasses -->
+    <rect x="160" y="210" width="60" height="40" rx="10" fill="none" stroke="#000000" stroke-width="8"/>
+    <rect x="250" y="210" width="60" height="40" rx="10" fill="none" stroke="#000000" stroke-width="8"/>
+    <line x1="220" y1="230" x2="250" y2="230" stroke="#000000" stroke-width="8"/>
+    <!-- Smile -->
+    <path d="M 190,280 Q 240,320 280,280" fill="#FFFFFF" stroke="#000000" stroke-width="8"/>
+    <!-- Body / Blouse (Yellow) -->
+    <path d="M 130,370 C 150,330 200,320 240,320 C 280,320 330,330 350,370 L 420,560 L 60,560 Z" fill="#FACC15" stroke="#000000" stroke-width="12"/>
+  </g>
+</svg>
