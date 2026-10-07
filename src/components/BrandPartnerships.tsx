@@ -9,10 +9,13 @@ import {
   Star, 
   Clock, 
   Share2, 
-  ArrowUpRight,
-  ShieldCheck,
-  Building2,
-  Utensils
+  ArrowUpRight, 
+  ShieldCheck, 
+  Building2, 
+  Utensils,
+  Zap,
+  Laptop,
+  Rocket
 } from "lucide-react";
 
 interface BrandPartnershipsProps {
@@ -22,10 +25,27 @@ interface BrandPartnershipsProps {
 export function BrandPartnerships({ onInquire }: BrandPartnershipsProps) {
   const packages = [
     {
+      id: "pkg-viral-tech",
+      title: "Viral-Ready Promotion & Tech Setup",
+      badge: "⭐ Empowering Provincial Hustles",
+      tagline: "Future-proof your local hustle! When 1.4 million hungry viewers flood your social channels, we equip you with modern digital tools so your shop effortlessly captures bookings, takeout orders, and new customer inquiries without tech headaches.",
+      icon: Zap,
+      deliverables: [
+        "Dedicated Vlog Feature & Viral Reels: A mouthwatering, heartwarming on-site feature by Pobreng Maestra introducing your brand's authentic story, specialty items, and location to 1.4M+ organic followers.",
+        "Turnkey Online Booking & Direct Ordering Pages: A fast, mobile-friendly landing hub allowing guests to book tables, reserve rooms, or place delivery orders directly via WhatsApp, Viber, or Messenger.",
+        "Streamlined Customer Onboarding & Automated Replies: An invisible digital engine that automatically answers FAQs, menu prices, and reservations 24/7 so you never leave a customer waiting.",
+        "Custom QR Counter Signs & Digital Launch Kit: Ready-to-print branded QR code table tents for your physical shop counter and high-res photo assets optimized for your social media channels.",
+      ],
+      idealFor: "Traditional local shops, homegrown cafes, family carinderias, pasalubong makers, boutique homestays, and provincial service providers ready to modernize their hustle.",
+      highlight: true,
+      customBorder: "border-[#E81C76]",
+    },
+    {
       id: "pkg-dedicated",
       title: "Full Dedicated Destination / Resort Feature",
       badge: "Most Popular for Resorts & Tourism",
       tagline: "Comprehensive 8–15 minute immersive video vlog exploring every corner of your property.",
+      icon: Video,
       deliverables: [
         "1x Long-form Facebook Dedicated Vlog (High-def 4K)",
         "2x High-energy Facebook Reels & YouTube Shorts",
@@ -35,12 +55,14 @@ export function BrandPartnerships({ onInquire }: BrandPartnershipsProps) {
       ],
       idealFor: "Resorts, Hotels, Eco-parks, Agri-tourism Farms, Provincial Tourism Offices",
       highlight: true,
+      customBorder: "border-[#14532D]",
     },
     {
       id: "pkg-food",
       title: "Restaurant & Food Crawl Spotlight",
       badge: "Highest Virality",
       tagline: "Mouthwatering tasting session showcasing signature dishes and chef interviews.",
+      icon: Utensils,
       deliverables: [
         "1x Dedicated Food Review Vlog (6–10 mins)",
         "2x Viral Food Sizzle Reels (B-roll of preparation & tasting)",
@@ -49,12 +71,14 @@ export function BrandPartnerships({ onInquire }: BrandPartnershipsProps) {
       ],
       idealFor: "Restaurants, Cafes, Bakeries, Food Chains, Local Food Stalls & Night Markets",
       highlight: false,
+      customBorder: "border-amber-200/70",
     },
     {
       id: "pkg-product",
       title: "Product Placement & Kitchen Integration",
       badge: "Best for FMCG & Appliances",
       tagline: "Organic, unforced incorporation into Maestra's home cooking and family life.",
+      icon: Sparkles,
       deliverables: [
         "Natural mention & demonstration inside high-performing cooking vlog",
         "Key product benefits highlighted in conversational Filipino/Bicolano",
@@ -63,12 +87,14 @@ export function BrandPartnerships({ onInquire }: BrandPartnershipsProps) {
       ],
       idealFor: "Food Seasonings, Kitchen Appliances, Beverages, Travel Gear, Home Goods",
       highlight: false,
+      customBorder: "border-amber-200/70",
     },
     {
       id: "pkg-custom",
       title: "Custom Ambassadorship & Grand Openings",
       badge: "Maximum Impact",
       tagline: "On-site celebrity presence, ribbon cutting, live coverage, and multi-month contracts.",
+      icon: Building2,
       deliverables: [
         "In-person appearance at grand opening or brand milestone",
         "Facebook Live coverage and meet-and-greet with local followers",
@@ -77,6 +103,7 @@ export function BrandPartnerships({ onInquire }: BrandPartnershipsProps) {
       ],
       idealFor: "Brand Launches, Shopping Malls, Regional Festivals, Long-term Endorsements",
       highlight: false,
+      customBorder: "border-amber-200/70",
     },
   ];
 
@@ -149,70 +176,113 @@ export function BrandPartnerships({ onInquire }: BrandPartnershipsProps) {
           </p>
         </div>
 
-        {/* 4 Partnership Package Cards */}
+        {/* Partnership Package Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {packages.map((pkg) => (
-            <div
-              key={pkg.id}
-              className={`rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 relative ${
-                pkg.highlight
-                  ? "bg-gradient-to-b from-white to-amber-50/60 border-2 border-[#14532D] shadow-xl hover:-translate-y-1"
-                  : "bg-[#FAF7F2] border border-amber-200/70 shadow-md hover:border-[#14532D]"
-              }`}
-            >
-              {pkg.highlight && (
-                <div className="absolute -top-3.5 left-7 bg-[#14532D] text-[#FEDE2B] text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
-                  <Star className="w-3 h-3 fill-[#FEDE2B]" />
-                  <span>{pkg.badge}</span>
-                </div>
-              )}
+          {packages.map((pkg) => {
+            const Icon = pkg.icon;
+            const isViralTech = pkg.id === "pkg-viral-tech";
 
-              <div className="space-y-4">
-                {!pkg.highlight && (
-                  <span className="inline-block text-[11px] font-extrabold uppercase tracking-wider text-[#E81C76] bg-pink-50 px-2.5 py-0.5 rounded-full">
-                    {pkg.badge}
-                  </span>
+            return (
+              <div
+                key={pkg.id}
+                className={`rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
+                  isViralTech
+                    ? "md:col-span-2 bg-gradient-to-br from-white via-amber-50/40 to-pink-50/40 border-2 border-[#E81C76] shadow-2xl hover:-translate-y-1"
+                    : pkg.highlight
+                    ? "bg-gradient-to-b from-white to-amber-50/60 border-2 border-[#14532D] shadow-xl hover:-translate-y-1"
+                    : "bg-[#FAF7F2] border border-amber-200/70 shadow-md hover:border-[#14532D]"
+                }`}
+              >
+                {pkg.highlight && (
+                  <div
+                    className={`absolute -top-3.5 left-7 text-[11px] font-black uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md flex items-center gap-1.5 ${
+                      isViralTech
+                        ? "bg-[#E81C76] text-white"
+                        : "bg-[#14532D] text-[#FEDE2B]"
+                    }`}
+                  >
+                    {isViralTech ? (
+                      <Rocket className="w-3.5 h-3.5 text-[#FEDE2B]" />
+                    ) : (
+                      <Star className="w-3 h-3 fill-[#FEDE2B]" />
+                    )}
+                    <span>{pkg.badge}</span>
+                  </div>
                 )}
 
-                <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">
-                  {pkg.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                  {pkg.tagline}
-                </p>
+                <div className="space-y-4">
+                  {!pkg.highlight && (
+                    <span className="inline-block text-[11px] font-extrabold uppercase tracking-wider text-[#E81C76] bg-pink-50 px-2.5 py-0.5 rounded-full">
+                      {pkg.badge}
+                    </span>
+                  )}
 
-                <div className="pt-2 border-t border-slate-200/70 space-y-2.5">
-                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 block">
-                    What's Included:
-                  </span>
-                  {pkg.deliverables.map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
-                      <CheckCircle2 className="w-4 h-4 text-[#14532D] shrink-0 mt-0.5" />
-                      <span>{item}</span>
+                  <div className="flex items-center gap-3 pt-1">
+                    <div
+                      className={`w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 shadow-xs ${
+                        isViralTech
+                          ? "bg-[#E81C76] text-white shadow-md shadow-[#E81C76]/25"
+                          : pkg.highlight
+                          ? "bg-[#14532D] text-[#FEDE2B]"
+                          : "bg-emerald-100 text-[#14532D]"
+                      }`}
+                    >
+                      <Icon className="w-5 h-5" />
                     </div>
-                  ))}
+                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">
+                      {pkg.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    {pkg.tagline}
+                  </p>
+
+                  <div className="pt-2 border-t border-slate-200/70 space-y-2.5">
+                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 block">
+                      What's Included:
+                    </span>
+                    <div className={isViralTech ? "grid grid-cols-1 sm:grid-cols-2 gap-2.5" : "space-y-2.5"}>
+                      {pkg.deliverables.map((item, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
+                          <CheckCircle2
+                            className={`w-4 h-4 shrink-0 mt-0.5 ${
+                              isViralTech ? "text-[#E81C76]" : "text-[#14532D]"
+                            }`}
+                          />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2 text-xs text-slate-500 font-medium">
+                    <strong className="text-slate-800">Ideal for:</strong> {pkg.idealFor}
+                  </div>
                 </div>
 
-                <div className="pt-2 text-xs text-slate-500 font-medium">
-                  <strong>Ideal for:</strong> {pkg.idealFor}
+                <div className="pt-6">
+                  <button
+                    onClick={() => onInquire(pkg.title)}
+                    className={`w-full py-3.5 rounded-2xl text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer ${
+                      isViralTech
+                        ? "bg-[#E81C76] hover:bg-[#d01568] text-white shadow-lg shadow-[#E81C76]/25"
+                        : pkg.highlight
+                        ? "bg-[#14532D] hover:bg-[#0f3f22] text-white shadow-md shadow-[#14532D]/20"
+                        : "bg-white hover:bg-slate-100 text-[#14532D] border border-amber-300 shadow-xs"
+                    }`}
+                  >
+                    <span>Request Rates &amp; Availability</span>
+                    <ArrowUpRight
+                      className={`w-3.5 h-3.5 ${
+                        isViralTech ? "text-white" : "text-[#FEDE2B]"
+                      }`}
+                    />
+                  </button>
                 </div>
               </div>
-
-              <div className="pt-6">
-                <button
-                  onClick={() => onInquire(pkg.title)}
-                  className={`w-full py-3 rounded-2xl text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer ${
-                    pkg.highlight
-                      ? "bg-[#14532D] hover:bg-[#0f3f22] text-white shadow-md shadow-[#14532D]/20"
-                      : "bg-white hover:bg-slate-100 text-[#14532D] border border-amber-300 shadow-xs"
-                  }`}
-                >
-                  <span>Request Rates &amp; Availability</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#FEDE2B]" />
-                </button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Featured Video Portfolio & Thumbnails Placeholder Grid */}

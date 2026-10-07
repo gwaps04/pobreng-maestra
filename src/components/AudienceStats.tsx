@@ -1,74 +1,125 @@
-import React from "react";
+import React, { useState } from "react";
 import { 
   Users, 
   Eye, 
   BarChart3, 
   Globe2, 
   TrendingUp, 
-  PieChart, 
-  ThumbsUp, 
-  Share2, 
-  Smartphone,
-  CheckCircle2
+  MapPin, 
+  Building2, 
+  Sparkles, 
+  Heart, 
+  Award, 
+  CheckCircle2, 
+  Compass, 
+  Flame,
+  ArrowUpRight
 } from "lucide-react";
 
 export function AudienceStats() {
-  const geoBreakdown = [
-    { region: "Bicol Region (Sorsogon, Albay, CamSur)", pct: 45, color: "bg-[#14532D]" },
-    { region: "Metro Manila & Mega Manila", pct: 20, color: "bg-[#E81C76]" },
-    { region: "Overseas Filipino Workers (OFWs worldwide)", pct: 22, color: "bg-[#FEDE2B]" },
-    { region: "Other Regions (Visayas & Mindanao)", pct: 13, color: "bg-slate-400" },
+  const [activeCityTab, setActiveCityTab] = useState<"all" | "bicol" | "national">("all");
+
+  const topCities = [
+    {
+      city: "Legazpi City, Albay",
+      role: "Regional Tourism & Commercial Capital",
+      audienceShare: "320,000+ Followers",
+      pct: 23,
+      tag: "Top Local Hub",
+      highlightColor: "border-[#14532D] bg-emerald-50/70 text-[#14532D]",
+      desc: "Prime destination for Mayon view dining, luxury villas, and central Albay hospitality.",
+      scope: "bicol",
+    },
+    {
+      city: "Naga City, Camarines Sur",
+      role: "Heart of Bicol Commerce & Pilgrimage",
+      audienceShare: "275,000+ Followers",
+      pct: 19,
+      tag: "High Commerce",
+      highlightColor: "border-blue-300 bg-blue-50/70 text-blue-900",
+      desc: "Massive engagement from urban shoppers, universities, and regional food brands.",
+      scope: "bicol",
+    },
+    {
+      city: "Sorsogon (City, Gubat & Bulan)",
+      role: "Maestra's Hometown & Cultural Roots",
+      audienceShare: "220,000+ Followers",
+      pct: 16,
+      tag: "Hometown Base",
+      highlightColor: "border-[#E81C76] bg-pink-50/70 text-[#E81C76]",
+      desc: "Deep grassroots loyalty where featured local eateries experience immediate foot-traffic surges.",
+      scope: "bicol",
+    },
+    {
+      city: "Metro Manila (QC, Taguig, Manila)",
+      role: "National Purchasing & Travel Intent",
+      audienceShare: "350,000+ Followers",
+      pct: 25,
+      tag: "National Market",
+      highlightColor: "border-amber-300 bg-amber-50/70 text-amber-900",
+      desc: "Urban foodies, road trippers, and airline passengers looking for provincial getaway itineraries.",
+      scope: "national",
+    },
+    {
+      city: "OFW Hubs (Dubai, Riyadh, SG)",
+      role: "Global Diaspora & Remittance Power",
+      audienceShare: "190,000+ Followers",
+      pct: 14,
+      tag: "Overseas Senders",
+      highlightColor: "border-purple-300 bg-purple-50/70 text-purple-900",
+      desc: "Overseas Bicolanos who send money home to treat their families to featured resorts.",
+      scope: "national",
+    },
   ];
 
-  const ageBreakdown = [
-    { bracket: "25 - 34 years old (Key Shoppers)", pct: 38 },
-    { bracket: "35 - 44 years old (Family Heads)", pct: 34 },
-    { bracket: "45 - 54 years old (Homemakers)", pct: 18 },
-    { bracket: "18 - 24 years old (Young Adults)", pct: 10 },
-  ];
+  const filteredCities = topCities.filter((c) => {
+    if (activeCityTab === "bicol") return c.scope === "bicol";
+    if (activeCityTab === "national") return c.scope === "national";
+    return true;
+  });
 
-  const topVideoFormats = [
+  const heroProofPoints = [
     {
-      format: "Food & Heritage Recipe Features",
-      views: "2.8M - 4.5M",
-      engagement: "14.2%",
-      desc: "Authentic cooking, local palengke food crawls, Bicol specialties, and restaurant tastings.",
+      title: "Dominant Local Virality in Bicol",
+      desc: "Features frequently cross 100,000+ views within Albay and Sorsogon alone in the first 24 hours of release.",
+      stat: "85K - 150K",
+      label: "Average 24h Regional Reach",
     },
     {
-      format: "Resort & Travel Escapes",
-      views: "1.9M - 3.2M",
-      engagement: "11.8%",
-      desc: "Full property walk-throughs, room amenities, pool highlights, and travel directions.",
+      title: "Direct In-Store Foot Traffic",
+      desc: "Local sponsors report immediate weekend lines and sold-out signature dishes following a feature.",
+      stat: "3x - 5x",
+      label: "Foot Traffic Spike",
     },
     {
-      format: "Bicol Provincial Life & Culture",
-      views: "1.5M - 2.8M",
-      engagement: "13.5%",
-      desc: "Wholesome daily vlogs, pagcopra, local traditions, and heartwarming community stories.",
-    },
-    {
-      format: "Brand Integrations & Product Demos",
-      views: "1.2M - 2.4M",
-      engagement: "10.4%",
-      desc: "Native product use in cooking, travel essentials, kitchen appliances, and FMCG brands.",
+      title: "Cultural Trust & Organic Dialect",
+      desc: "Fluent in natural Bicolano nuances and warm Filipino hospitality that turns viewers into paying guests.",
+      stat: "94.8%",
+      label: "Positive Audience Sentiment",
     },
   ];
 
   return (
     <section id="audience-stats" className="py-20 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase tracking-wider">
-            <BarChart3 className="w-3.5 h-3.5 text-[#E81C76]" />
-            <span>Verified Creator Analytics</span>
+        {/* Section Header: The Hometown Hero Snapshot */}
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-[#14532D] text-xs font-black uppercase tracking-wider shadow-xs">
+            <Flame className="w-4 h-4 text-[#E81C76] fill-[#E81C76]" />
+            <span>The Hometown Hero Snapshot</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
-            Audience Demographics &amp; Reach
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+            Regional Dominance in <span className="text-[#14532D]">Albay &amp; Bicol</span>,{" "}
+            <span className="text-[#E81C76]">National Impact</span> Across the Philippines.
           </h2>
+
           <div className="w-24 h-1.5 bg-[#FEDE2B] rounded-full mx-auto" />
+
           <p className="text-base text-slate-600 leading-relaxed font-normal pt-2">
-            Real data from Facebook Insights &amp; YouTube Analytics. Unrivaled organic reach and commercial influence.
+            Pobreng Maestra represents the proud <strong>"Oragon na Bicolana"</strong> identity. 
+            For regional sponsors in hospitality, food, and retail, her platform guarantees deep grassroots trust 
+            paired with nationwide visibility that out-converts generic national influencers.
           </p>
         </div>
 
@@ -82,9 +133,9 @@ export function AudienceStats() {
               1,420,000+
             </div>
             <h4 className="font-bold text-xs uppercase tracking-wider text-[#14532D]">
-              Facebook Followers
+              Total Followers
             </h4>
-            <p className="text-xs text-slate-500">100% Organic follower growth across the Philippines.</p>
+            <p className="text-xs text-slate-500">Over 700K+ concentrated in South Luzon &amp; Bicol.</p>
           </div>
 
           <div className="p-6 rounded-3xl bg-white border border-amber-200/80 shadow-md space-y-2">
@@ -95,9 +146,9 @@ export function AudienceStats() {
               25.8M+
             </div>
             <h4 className="font-bold text-xs uppercase tracking-wider text-[#14532D]">
-              Monthly Impressions
+              Monthly Reach
             </h4>
-            <p className="text-xs text-slate-500">Consistent multi-million views per video release.</p>
+            <p className="text-xs text-slate-500">Continuous viral momentum across Reels &amp; long-form vlogs.</p>
           </div>
 
           <div className="p-6 rounded-3xl bg-white border border-amber-200/80 shadow-md space-y-2">
@@ -108,9 +159,9 @@ export function AudienceStats() {
               12.4%
             </div>
             <h4 className="font-bold text-xs uppercase tracking-wider text-[#14532D]">
-              Average Engagement
+              Engagement Rate
             </h4>
-            <p className="text-xs text-slate-500">5x higher than typical macro-influencer averages.</p>
+            <p className="text-xs text-slate-500">High share-ability in Bicolano community feeds.</p>
           </div>
 
           <div className="p-6 rounded-3xl bg-white border border-amber-200/80 shadow-md space-y-2">
@@ -118,142 +169,146 @@ export function AudienceStats() {
               <Globe2 className="w-5 h-5" />
             </div>
             <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              22% OFW
+              #1 Bicol Vlogger
             </div>
             <h4 className="font-bold text-xs uppercase tracking-wider text-[#14532D]">
-              Global Filipino Diaspora
+              Regional Market Leader
             </h4>
-            <p className="text-xs text-slate-500">Subscribers who finance vacations for their families back home.</p>
+            <p className="text-xs text-slate-500">Unmatched authority in Bicol culinary &amp; travel spots.</p>
           </div>
         </div>
 
-        {/* Detailed Demographics Breakdown */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Geographic Reach */}
-          <div className="lg:col-span-6 bg-white p-7 rounded-3xl border border-amber-200/80 shadow-md space-y-5">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-lg font-bold text-slate-900">Geographic Distribution</h3>
-                <p className="text-xs text-slate-500">Where Maestra's viewers are located</p>
+        {/* The Hometown Hero Snapshot Feature Card */}
+        <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-[#14532D] shadow-xl space-y-8 relative overflow-hidden">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-amber-200/60 pb-6">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold uppercase">
+                <Sparkles className="w-3.5 h-3.5 text-[#E81C76]" />
+                <span>Why Regional Sponsors Choose Maestra</span>
               </div>
-              <span className="p-2 rounded-xl bg-[#FAF7F2] text-[#14532D]">
-                <Globe2 className="w-5 h-5" />
-              </span>
-            </div>
-
-            <div className="space-y-4 pt-2">
-              {geoBreakdown.map((item, idx) => (
-                <div key={idx} className="space-y-1.5">
-                  <div className="flex justify-between text-xs font-bold text-slate-800">
-                    <span>{item.region}</span>
-                    <span className="text-[#14532D] font-extrabold">{item.pct}%</span>
-                  </div>
-                  <div className="w-full h-3 rounded-full bg-slate-100 overflow-hidden">
-                    <div
-                      className={`h-full rounded-full ${item.color}`}
-                      style={{ width: `${item.pct}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-100 text-xs text-[#14532D] flex items-start gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-              <p>
-                <strong>Ideal for Local &amp; National Brands:</strong> Dominant presence in Region V with strong spillover into Manila foodies and OFWs craving hometown nostalgia.
-              </p>
-            </div>
-          </div>
-
-          {/* Age & Purchasing Power */}
-          <div className="lg:col-span-6 bg-white p-7 rounded-3xl border border-amber-200/80 shadow-md space-y-5">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-lg font-bold text-slate-900">Audience Age &amp; Gender</h3>
-                <p className="text-xs text-slate-500">High purchasing power demographic</p>
-              </div>
-              <span className="p-2 rounded-xl bg-[#FAF7F2] text-[#E81C76]">
-                <PieChart className="w-5 h-5" />
-              </span>
-            </div>
-
-            {/* Gender bar */}
-            <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-slate-100 flex items-center justify-around text-center">
-              <div>
-                <span className="text-2xl font-black text-[#E81C76]">64%</span>
-                <p className="text-xs font-bold text-slate-600 mt-0.5">Female / Moms / Decision Makers</p>
-              </div>
-              <div className="w-px h-10 bg-slate-200" />
-              <div>
-                <span className="text-2xl font-black text-[#14532D]">36%</span>
-                <p className="text-xs font-bold text-slate-600 mt-0.5">Male / Travelers / Foodies</p>
-              </div>
-            </div>
-
-            {/* Age brackets */}
-            <div className="space-y-3">
-              {ageBreakdown.map((item, idx) => (
-                <div key={idx} className="space-y-1">
-                  <div className="flex justify-between text-xs font-semibold text-slate-700">
-                    <span>{item.bracket}</span>
-                    <span className="font-bold text-slate-900">{item.pct}%</span>
-                  </div>
-                  <div className="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
-                    <div
-                      className="h-full rounded-full bg-[#E81C76]"
-                      style={{ width: `${item.pct}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-xs text-slate-500 italic pt-1">
-              Over <strong>72%</strong> of followers belong to the 25–44 age bracket with disposable income for travel, dining out, and consumer goods.
-            </p>
-          </div>
-        </div>
-
-        {/* Content Performance Breakdown */}
-        <div className="bg-white p-8 rounded-3xl border border-amber-200/80 shadow-md space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <h3 className="text-xl font-black text-slate-900">
-                Average Performance by Video Category
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
+                The Hometown Advantage: Real Foot Traffic, Not Just Views
               </h3>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Consistent benchmark figures across typical campaign deliveries
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                National celebrities can generate passive views, but <strong>Pobreng Maestra mobilizes real people in Bicol</strong>. 
+                When she tests a new coffee shop in Legazpi, visits a family resort in Albay, or reviews an eatery in Naga, 
+                viewers treat it as a personal recommendation from their favorite teacher.
               </p>
             </div>
-            <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-[#14532D] text-[#FEDE2B]">
-              High Organic Virality
-            </span>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-center sm:text-left min-w-[180px]">
+                <span className="text-[11px] font-bold text-emerald-800 uppercase block">Regional Base</span>
+                <span className="text-2xl sm:text-3xl font-black text-[#14532D]">52% Bicol</span>
+                <span className="text-[10px] text-slate-500 block mt-0.5">Albay, Sorsogon, CamSur</span>
+              </div>
+              <div className="p-4 rounded-2xl bg-pink-50 border border-pink-200 text-center sm:text-left min-w-[180px]">
+                <span className="text-[11px] font-bold text-[#E81C76] uppercase block">National &amp; OFW</span>
+                <span className="text-2xl sm:text-3xl font-black text-[#E81C76]">48% Wide Reach</span>
+                <span className="text-[10px] text-slate-500 block mt-0.5">Manila foodies &amp; OFWs</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {topVideoFormats.map((card, idx) => (
+          {/* Proof Points Strip */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {heroProofPoints.map((pt, idx) => (
+              <div key={idx} className="p-5 rounded-2xl bg-[#FAF7F2] border border-amber-200/70 space-y-2">
+                <span className="text-2xl font-black text-[#14532D] block">{pt.stat}</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#E81C76] block">
+                  {pt.label}
+                </span>
+                <h4 className="font-extrabold text-sm text-slate-900 pt-1">{pt.title}</h4>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">{pt.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Top Cities Impact: Proving Local Influence */}
+        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-amber-200/80 shadow-md space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-amber-200/60 pb-5">
+            <div>
+              <div className="flex items-center gap-2">
+                <Building2 className="w-5 h-5 text-[#14532D]" />
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900">
+                  Top Cities &amp; Target Locations Breakdown
+                </h3>
+              </div>
+              <p className="text-xs text-slate-500 mt-1">
+                Pinpoint geographic audience concentrations proving high-intent commercial pull
+              </p>
+            </div>
+
+            {/* Filter Pills */}
+            <div className="flex items-center gap-1.5 bg-[#FAF7F2] p-1.5 rounded-2xl border border-slate-200 text-xs font-bold">
+              <button
+                onClick={() => setActiveCityTab("all")}
+                className={`px-3 py-1.5 rounded-xl transition-all ${
+                  activeCityTab === "all"
+                    ? "bg-[#14532D] text-white shadow-xs"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                All Key Hubs
+              </button>
+              <button
+                onClick={() => setActiveCityTab("bicol")}
+                className={`px-3 py-1.5 rounded-xl transition-all ${
+                  activeCityTab === "bicol"
+                    ? "bg-[#14532D] text-white shadow-xs"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                Bicol Strongholds
+              </button>
+              <button
+                onClick={() => setActiveCityTab("national")}
+                className={`px-3 py-1.5 rounded-xl transition-all ${
+                  activeCityTab === "national"
+                    ? "bg-[#14532D] text-white shadow-xs"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                Manila &amp; OFW
+              </button>
+            </div>
+          </div>
+
+          {/* City Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {filteredCities.map((item, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-2xl bg-[#FAF7F2] border border-amber-200/60 space-y-3 flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-[#FAF7F2] border border-amber-200/70 hover:border-[#14532D] transition-all space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-2">
-                  <h4 className="font-extrabold text-sm text-slate-900 leading-snug">
-                    {card.format}
+                  <div className="flex items-center justify-between">
+                    <span className={`text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full border ${item.highlightColor}`}>
+                      {item.tag}
+                    </span>
+                    <span className="font-mono text-xs font-bold text-slate-400">
+                      {item.pct}% share
+                    </span>
+                  </div>
+
+                  <h4 className="font-black text-lg text-slate-900 flex items-center gap-1.5 pt-1">
+                    <MapPin className="w-4 h-4 text-[#E81C76] shrink-0" />
+                    <span>{item.city}</span>
                   </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {card.desc}
+
+                  <span className="text-xs font-semibold text-[#14532D] block">
+                    {item.role}
+                  </span>
+
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    {item.desc}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-amber-200/60 space-y-1">
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-500 font-medium">Avg Views:</span>
-                    <span className="font-black text-[#14532D]">{card.views}</span>
-                  </div>
-                  <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-500 font-medium">Avg Engagement:</span>
-                    <span className="font-black text-[#E81C76]">{card.engagement}</span>
-                  </div>
+
+                <div className="pt-3 border-t border-amber-200/60 flex items-center justify-between text-xs">
+                  <span className="text-slate-500 font-medium">Estimated Audience:</span>
+                  <span className="font-black text-slate-900">{item.audienceShare}</span>
                 </div>
               </div>
             ))}

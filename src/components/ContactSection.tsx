@@ -167,6 +167,7 @@ export function ContactSection({ initialPackage = "" }: ContactSectionProps) {
                       onChange={(e) => setFormData({ ...formData, collaborationType: e.target.value })}
                       className="w-full p-3 rounded-xl border border-slate-200 bg-[#FAF7F2] font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#14532D]"
                     >
+                      <option value="Viral-Ready Promotion & Tech Setup">Viral-Ready Promotion &amp; Tech Setup</option>
                       <option value="Resort / Hotel Destination Feature">Resort / Hotel Destination Feature</option>
                       <option value="Restaurant / Food Crawl Review">Restaurant / Food Crawl Review</option>
                       <option value="Product Placement & Cooking Integration">Product Placement &amp; Cooking Integration</option>
