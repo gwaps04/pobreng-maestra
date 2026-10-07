@@ -73,7 +73,7 @@ export function MeetMaestra() {
 
             {/* Quick Upload Note */}
             <p className="text-[11px] text-center text-slate-400">
-              Easily update this portrait anytime at <code className="text-slate-600">public/images/avatar.png</code>
+              Easily update this portrait anytime at <code className="text-slate-600">public/images/meet-pobreng-maestra.jpg</code>
             </p>
           </div>
 
@@ -91,20 +91,40 @@ export function MeetMaestra() {
               </p>
             </div>
 
-            {/* Pillars Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            {/* Pillars Grid with 3D Paper Fold & Rotate Effect */}
+            <div className="perspective-container grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               {pillars.map((pillar, idx) => {
                 const Icon = pillar.icon;
                 return (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-[#FAF7F2] border border-amber-200/70 space-y-2 hover:border-[#14532D] transition-colors"
+                    className="paper-fold-card group p-5 rounded-2xl bg-[#FAF7F2] border border-amber-200/80 hover:border-[#14532D] space-y-2.5 cursor-pointer overflow-hidden transition-all duration-300"
                   >
-                    <div className="w-9 h-9 rounded-xl bg-[#14532D] text-[#FEDE2B] flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
+                    {/* Origami Corner Fold Accent */}
+                    <div className="paper-corner-fold" />
+                    {/* Vertical Paper Crease Line */}
+                    <div className="paper-crease-line" />
+
+                    <div className="flex items-center justify-between">
+                      <div className="w-10 h-10 rounded-xl bg-[#14532D] text-[#FEDE2B] flex items-center justify-center shadow-xs group-hover:scale-110 group-hover:rotate-6 group-hover:bg-[#E81C76] group-hover:text-white transition-all duration-300">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <span className="font-mono text-[11px] font-bold text-slate-400 group-hover:text-[#14532D] transition-colors">
+                        0{idx + 1}
+                      </span>
                     </div>
-                    <h3 className="font-bold text-sm text-slate-900">{pillar.title}</h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">{pillar.desc}</p>
+
+                    <h3 className="font-black text-sm text-slate-900 group-hover:text-[#14532D] transition-colors flex items-center gap-1.5 pt-1">
+                      <span>{pillar.title}</span>
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                      {pillar.desc}
+                    </p>
+
+                    {/* Paper edge tag indicator */}
+                    <div className="pt-2 flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-[#E81C76] opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                      <span>✦ Maestra's Promise</span>
+                    </div>
                   </div>
                 );
               })}
